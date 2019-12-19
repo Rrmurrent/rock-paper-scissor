@@ -1,28 +1,26 @@
 var postResults = document.querySelector(".result > p");
 
-// setting up userChoice
-const getUserChoice = userInput => {
-    userInput = userInput.toLowerCase();
+var userResult = document.querySelector("#userResult > p");
 
-  //   If/else statmnt
-    if (userInput === 'rock'|| userInput ==='paper'|| userInput ===  'scissors') {
-      return userInput;
-      }
-      
-      else {
-        console.log ('Please chose either: rock, paper, or scissors');
-      }
-  };
+var gameResult = document.querySelector("#gameResult > p");
 
-  
-  // checking to see if it works
-  console.log(getUserChoice('Paper'));
-  console.log(getUserChoice('plastic'));
-  console.log(getUserChoice('scissors'));
-  console.log(getUserChoice('rock'));
+// testing switch case for getUser Choice
 
-   
-  
+function getUserChoice() {
+  switch (Math.floor(Math.random()*3)) {
+    case 0:
+      return 'You chose ROCK';
+    case 1:
+      return 'You chose PAPER';
+    case 2: 
+      return'You chose Scissors';
+  }
+};
+
+userResult.innerHTML = (getUserChoice());
+
+
+
   // setting up computer choice
   
   function getComputerChoice() {
@@ -37,11 +35,35 @@ const getUserChoice = userInput => {
    
   };
 
-//   posting computer choices to html to be seen by player. Still have more work with this that needs to be done.
+  postResults.innerHTML = (getComputerChoice());
 
-  postResults.innerHTML = (getComputerChoice(0));
-  postResults.innerHTML = (getComputerChoice(1));
-  postResults.innerHTML = (getComputerChoice(2));
+
+
+  function determineWinner(getUserChoice, getComputerChoice) {
+    if(getUserChoice === getComputerChoice) {
+      return 'game was a tie';
+      }
+     else if (getUserChoice === 'rock')  {
+       if (getComputerChoice === 'paper') {
+           return 'Computer Won';
+           }
+       else {
+         return 'You Won';
+       }
+     }
+    else if (getUserChoice === 'paper') {
+      if (getComputerChoice === 'scissors') {
+        return 'Computer Won';
+      }
+      else {
+        return 'CONGRATULATIONS!! YOU WON! '
+      }
+    }
+    
+  };
+
+  gameResult.innerHTML = (determineWinner());
+//   Still have more work with this that needs to be done.
 
 
 
