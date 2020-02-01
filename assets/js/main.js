@@ -5,20 +5,35 @@ var userChoice = document.querySelector("#userChoice > p");
 var gameResult = document.querySelector("#gameResult > p");
 
 
-function getUserChoice () {
-  var randomNumber = Math.floor(Math.random()*3);
-  var choices = ["rock", "scissors", "paper"];
-  console.log(randomNumber);
-  // console.log(choices);
-  console.log(choices[randomNumber])
-  return ('You chose' + ' ' + choices[randomNumber]);
+
+function chosePaper() {
+console.log('This is working, you chose paper');
+userChoice.innerHTML= "you chose paper";
+return('You Chose Paper');
 
 }
-var result = getUserChoice();
-console.log(result);
 
-userChoice.innerHTML = (result);
+ function choseRock() {
+  console.log('This is working, you chose rock');
+  userChoice.innerHTML= "you chose rock";
 
+ };
+
+function choseScissors() {
+  console.log('This is working, you chose Scissors');
+  userChoice.innerHTML= "you chose Scissors";
+
+ };
+
+// function getUserChoice () {
+//   var randomNumber = Math.floor(Math.random()*3);
+//   var choices = ["rock", "scissors", "paper"];
+//   console.log(randomNumber);
+//   // console.log(choices);
+//   console.log(choices[randomNumber])
+//   return ('You chose' + ' ' + choices[randomNumber]);
+
+// }
 
 function getComputerChoice() {
   var computerRandomChoice =  Math.floor(Math.random()*3);
@@ -31,54 +46,52 @@ function getComputerChoice() {
 var computerChoice = getComputerChoice();
 console.log(computerChoice);
 postResults.innerHTML = (computerChoice);
-// console.log(getUserChoice());
 
 
 
+  // function determineWinner(getUserChoice, getComputerChoice) {
+  // if ((getUserChoice === 'rock') || (getComputerChoice === 'paper')) {
+  //          return 'Computer Won';
+  //    }
 
-  function determineWinner(getUserChoice, getComputerChoice) {
-  if ((getUserChoice === 'rock') || (getComputerChoice === 'paper')) {
-           return 'Computer Won';
-     }
-
-     else if ((getUserChoice === 'rock') || (getComputerChoice === 'rock')) {
+  //    else if ((getUserChoice === 'rock') || (getComputerChoice === 'rock')) {
        
-      return 'It was a tie';
+  //     return 'It was a tie';
 
-    }
+  //   }
 
-    else if ((getUserChoice === 'rock') || (getComputerChoice === 'scissors')) {
+  //   else if ((getUserChoice === 'rock') || (getComputerChoice === 'scissors')) {
        
-      return 'You Won';
-    }
-    else if ((getUserChoice === 'paper') || (getComputerChoice === 'scissors')) {
+  //     return 'You Won';
+  //   }
+  //   else if ((getUserChoice === 'paper') || (getComputerChoice === 'scissors')) {
        
-      return 'Computer Won';
-    }
-    else if ((getUserChoice === 'paper') || (getComputerChoice === 'rock')) {
-      return 'You Win';
-    }
+  //     return 'Computer Won';
+  //   }
+  //   else if ((getUserChoice === 'paper') || (getComputerChoice === 'rock')) {
+  //     return 'You Win';
+  //   }
     
-    else if ((getUserChoice === 'paper') || (getComputerChoice === 'paper')) {
-      return 'It was a tie';
-    }
+  //   else if ((getUserChoice === 'paper') || (getComputerChoice === 'paper')) {
+  //     return 'It was a tie';
+  //   }
     
-    else if ((getUserChoice === 'scissors') || (getComputerChoice === 'rock')) {
-      return 'Computer Wins';
-    }
-    else if ((getUserChoice === 'scissors') || (getComputerChoice === 'paper')) {
-      return 'You win';
-    }
-    else if ((getUserChoice === 'scissors') || (getComputerChoice === 'scissors')) {
-      return 'It was a tie';
-    }
-    else {
-      return 'You have an error? I think?'
-    }
-  }
+  //   else if ((getUserChoice === 'scissors') || (getComputerChoice === 'rock')) {
+  //     return 'Computer Wins';
+  //   }
+  //   else if ((getUserChoice === 'scissors') || (getComputerChoice === 'paper')) {
+  //     return 'You win';
+  //   }
+  //   else if ((getUserChoice === 'scissors') || (getComputerChoice === 'scissors')) {
+  //     return 'It was a tie';
+  //   }
+  //   else {
+  //     return 'You have an error? I think?'
+  //   }
+  // }
 
 
-  gameResult.innerHTML = (determineWinner());
+  // gameResult.innerHTML = (determineWinner());
 
 
 
@@ -97,11 +110,7 @@ postResults.innerHTML = (computerChoice);
 
 
 
-
-
-
-
-
+   
 
 // ------------------------------------------------------------------
 // document.getElementById ('userChoice').innerHTML = getUserChoice();
